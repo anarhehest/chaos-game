@@ -6,6 +6,7 @@ Configure N (vertices), r (step fraction), and points-per-frame to explore class
 ## Usage
 ```shell
 git clone https://github.com/anarhehest/chaos-game.git
+cd chaos-game
 go get github.com/hajimehoshi/ebiten/v2
 ```
 **Run with default parameters (Sierpinski triangle):**
