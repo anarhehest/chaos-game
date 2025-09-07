@@ -108,32 +108,10 @@ func (g *Game) Update() error {
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	screen.DrawImage(g.img, &ebiten.DrawImageOptions{})
-	// draw vertex markers
-	for _, v := range g.verts {
-		drawCircle(screen, int(v.X), int(v.Y), 3, color.RGBA{255, 255, 255, 255})
-	}
 }
 
 func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {
 	return screenWidth, screenHeight
-}
-
-func drawCircle(img *ebiten.Image, cx, cy, r int, col color.RGBA) {
-	minX := cx - r
-	maxX := cx + r
-	minY := cy - r
-	maxY := cy + r
-	for y := minY; y <= maxY; y++ {
-		for x := minX; x <= maxX; x++ {
-			dx := x - cx
-			dy := y - cy
-			if dx*dx+dy*dy <= r*r {
-				if x >= 0 && x < screenWidth && y >= 0 && y < screenHeight {
-					img.Set(x, y, col)
-				}
-			}
-		}
-	}
 }
 
 func main() {
