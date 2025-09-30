@@ -3,6 +3,7 @@
 all: build run
 
 build:
+	go get github.com/hajimehoshi/ebiten/v2
 	go build -o build/chaos-game
 	@echo "Built: build/chaos-game"
 
